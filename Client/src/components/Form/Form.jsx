@@ -28,7 +28,6 @@ const Form = ({login}) =>{
         event.preventDefault();
         login(userData);
      }
-
     return(
         <div className={style.principalContainer} >
         <form className = {style.containerForm} onClick={handleSubmit}>

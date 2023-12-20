@@ -5,6 +5,7 @@
     top: 18rem;
     left: 1.5rem;
     flex-basis: calc(100%,5);
+    padding: 0 5rem;
 }
 @media (min-width: 400px) and (max-width:700px){
     .order{

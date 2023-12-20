@@ -2,23 +2,8 @@
     display: flex;
     justify-content: center;
     padding-bottom: 0px;
-}
-
-.image{
-    position: absolute;
-    text-align: center;
-    width: 15%;
-    position: fixed;
-    left: 2rem;
-    top: 0.5rem;
-    /* top: 10px;
-    left: 40%; */
-}
-
-.smallContainer {
     position: relative;
-    left: 100rem;
-    top: 10rem;
+    top: 30%;
 }
 
 .input{

@@ -8,16 +8,24 @@
 }
 .myNavBar{
     position: relative;
-    top: 4.5rem;
-    right: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #120d17;
+    height: 10%;
+    padding: 0 2%;
 }
+.image{
+    text-align: center;
+    width: 12%;
+    position: fixed;
+    /* top: 10px;
+    left: 40%; */
+}
+
 
 .myButton{
         position: relative;
-        bottom: 2rem;
         width: 6.5rem; 
         height: 40px;
         background: #fff;
