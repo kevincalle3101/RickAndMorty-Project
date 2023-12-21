@@ -1,5 +1,5 @@
 import React from "react";
-// import style from "./Favorites.module.css"
+import style from "./Favorites.module.css"
 import { connect } from "react-redux";
 import Card from "../Card/Card";
 import { useDispatch } from "react-redux";
@@ -18,7 +18,21 @@ function Favorites({ myFavorites }) {
     }
 
     return (
-        <div>
+        <div className={style.myFavorites}>
+            <div className={style.selectsContainer}>
+                <select onChange={handleOrder} className={style.select}>
+                    <option value="A" >Ascendente</option>
+                    <option value="D" >Descendente</option>
+                </select>
+                <select onChange={handleFilter} className={style.select}>
+                    <option value="All" > All</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Genderless">Genderless</option>
+                    <option value="unknow">Unknow</option>
+                </select>
+            </div>
+            <div className={style.favoritesContainer}>
             {
                 myFavorites?.map(favorite => {
                     return (
@@ -36,17 +50,7 @@ function Favorites({ myFavorites }) {
                     )
                 })
             }
-            <select onChange={handleOrder} >
-                <option value="A" >Ascendente</option>
-                <option value="D" >Descendente</option>
-            </select>
-            <select onChange={handleFilter} >
-                <option value="All" > All</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Genderless">Genderless</option>
-                <option value="unknow">Unknow</option>
-            </select>
+            </div>
         </div>
     )
 }

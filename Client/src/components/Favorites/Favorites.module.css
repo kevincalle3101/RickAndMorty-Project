@@ -1,5 +1,33 @@
 .myFavorites{
-    position: absolute;
-    bottom: 18rem;
-    left: 0rem;
+        position: relative;
+        margin-top: 7rem;
+        padding: 0 5rem;
+        left: 5rem;
+}
+.selectsContainer{
+    display: flex;
+    flex-direction: row;
+}
+.select{
+    margin-right: 2rem;
+    width: 10rem;
+    height: 2rem;
+    font-size: 17px;
+    color: #00d82f;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+.select:hover{
+    background-color: #00d82f;
+    color: white;
+}
+.favoritesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: calc(100%,5);
+    margin-top: 6rem;
+    margin-left: -1rem;
 }

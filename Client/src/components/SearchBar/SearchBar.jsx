@@ -1,6 +1,7 @@
 import style from "./SearchBar.module.css";
 import { useState } from "react";
-export default function SearchBar({onSearch}) {
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
+export default function SearchBar({ onSearch }) {
 
    const [id, setId] = useState('')
    const handleChange = (event) => {
@@ -11,16 +12,19 @@ export default function SearchBar({onSearch}) {
 
    return (
       <div className={style.container}>
+         <button type="submit" onClick={() => { onSearch(id); setId('') }}
+            className={style.button}
+         >Search</button>
          <input type='search'
-         value = {id}
-         onChange = {handleChange}
-         placeholder = "Search..."
-         className= {style.input}
-         name = "search"
+            value={id}
+            onChange={handleChange}
+            placeholder="Type a number"
+            className={style.input}
+            name="search"
          />
-         <button type = "submit" onClick={()=>{onSearch(id); setId('')}}
-          className={style.button}
-          >Search</button>
+         <div className={style.containerIcon}>
+         <HelpCenterIcon className={style.icon} fontSize={"large"}/>
+         </div>
       </div>
    );
 }

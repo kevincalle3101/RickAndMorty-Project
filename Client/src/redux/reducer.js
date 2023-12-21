@@ -11,13 +11,14 @@ const reducer = (state = initialState, { type, payload }) => {
             return { ...state, myFavorites: payload, allCharacters: payload };
 
         case REMOVE_FAV:
-            return { ...state, myFavorites: payload };
+            return { ...state, myFavorites: payload, allCharacters: payload };
 
         case FILTER:
-            let allCharactersFiltered = state.allCharacters.filter((character) => character.gender === payload)
+            let allCharactersCopy = [...state.allCharacters]
+            let allCharactersFiltered = allCharactersCopy.filter((character) => character.gender === payload)
             return {
                 ...state,
-                myFavorites: allCharactersFiltered ? allCharactersFiltered : state.allCharacters
+                myFavorites: payload === "All" ? state.allCharacters : allCharactersFiltered
             }
         case ORDER:
             let allCharactersOrder = [...state.allCharacters]

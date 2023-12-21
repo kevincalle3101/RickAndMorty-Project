@@ -1,9 +1,10 @@
 import SearchBar from "../SearchBar/SearchBar";
-import { Link } from "react-router-dom";
+import { NavLink,  useLocation } from "react-router-dom";
 import style from "./Nav.module.css"
 import imageLogo from './r&m.png'
 
 const Nav = ({ onSearch }) => {
+    const location = useLocation();
     return (
         <nav className={style.myNavBar} >
             <img
@@ -11,22 +12,11 @@ const Nav = ({ onSearch }) => {
                 src={imageLogo}
                 alt="logo rick and morty"
             />
-            <SearchBar onSearch={onSearch} />
-            <button className={style.myButton}>
-                <Link to="/About">About</Link>
-            </button>
-
-            <button className={style.myButton}>
-                <Link to="/home">Home</Link>
-            </button>
-
-            <button className={style.myButton} >
-                <Link to="/favorites" >Favorites</Link>
-            </button>
-
-            <button className={style.myButton}>
-                <Link to="/" >Log Out</Link>
-            </button>
+                <NavLink to="/About" className={style.linkButton} activeClassName={style.activeLink}>About</NavLink>
+                <NavLink to="/home" className={style.linkButton} activeClassName={style.activeLink}>Home</NavLink>
+                <NavLink to="/favorites" className={style.linkButton} activeClassName={style.activeLink}>Favorites</NavLink>
+                <NavLink to="/" className={style.linkButton} activeClassName={style.activeLink}>Log Out</NavLink>
+                {location.pathname === "/home" && <SearchBar onSearch={onSearch} />}
         </nav>
     )
 }

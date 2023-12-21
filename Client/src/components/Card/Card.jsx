@@ -1,5 +1,5 @@
 import style from "./Card.module.css";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions";
 import { useState, useEffect } from "react";
@@ -25,6 +25,7 @@ function Card({ id, name, status, species, gender,
          addFav({ id, name, status, species, gender, origin, image, onClose }) //le mando que haga un dispatch solo a las propiedades que quiero que guarde
       }
    }
+   const location = useLocation();
    return (
       <div className={style.container}>
          <img src={backgroundCard} alt='' className={style.backgroundCard} />
@@ -35,8 +36,10 @@ function Card({ id, name, status, species, gender,
             ) : (
                <button onClick={handleFavorite} className={style.favorite} >🤍</button>
             )}
-         <button className={style.closeButton}
-            onClick={() => onClose(id)}>X</button>
+         {location.pathname === "/home" &&
+            <button className={style.closeButton}
+               onClick={() => onClose(id)}>X</button>
+         }
          <h3 className={style.name}>{name}</h3>
          <h3 className={style.status}>{status}</h3>
          <h3 className={style.species}>{species}</h3>

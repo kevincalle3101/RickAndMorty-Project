@@ -13,6 +13,7 @@
     height: 27rem;
     padding: 1rem;
     position: relative;
+    transition: all 0.4s;
 }
 .backgroundCard{
     position: absolute;
@@ -34,12 +35,13 @@
     top: 1px;
     cursor: pointer;
     border:0px;
-    background-color: red;
+    background-color: #00d82f;
     color: white;
     border: 1px solid black;
     width: 30px;
     height: 30px;
     border-radius: 15px;
+    border: none;
 }
 .closeButton:hover{
     background-color: grey;
@@ -119,9 +121,11 @@
     padding: 0.5rem 1.5rem;
     display: block;
     text-align: center;
+    transition: all 0.4s;
 }
 .aDetail:hover{
-    background-color: gray;
+    background-color: white;
+    color: #00d82f;
 }
 
 @media (min-width:300px) and (max-width:700px){

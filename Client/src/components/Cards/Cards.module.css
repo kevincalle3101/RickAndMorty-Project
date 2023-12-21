@@ -2,8 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    top: 18rem;
-    left: 1.5rem;
+    top: 15rem;
+    left: 3rem;
     flex-basis: calc(100%,5);
     padding: 0 5rem;
 }
